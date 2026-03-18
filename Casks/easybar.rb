@@ -1,6 +1,6 @@
 cask "easybar" do
-  version "0.1.0"
-  sha256 "REPLACE_WITH_SHA256_OF_EasyBar-0.1.0.zip"
+  version "0.0.4"
+  sha256 "055e3675d751a7ac8d50867ca58a3b8eede17e1ad246575b4775f5adcf658ef2"
 
   url "https://github.com/gi8lino/easybar/releases/download/v#{version}/EasyBar-#{version}.zip"
   name "EasyBar"
@@ -10,7 +10,7 @@ cask "easybar" do
   depends_on macos: ">= :sonoma"
 
   app "EasyBar.app"
-  binary "#{appdir}/EasyBar.app/Contents/MacOS/easybar", target: "easybar"
+  binary "easybarctl", target: "easybar"
 
   zap trash: [
     "~/Library/Logs/EasyBar.log",
