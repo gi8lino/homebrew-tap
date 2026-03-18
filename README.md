@@ -13,7 +13,7 @@ brew tap gi8lino/tap
 Install EasyBar:
 
 ```bash
-brew install easybar
+brew install gi8lino/tap/easybar
 ```
 
 This installs:
@@ -45,7 +45,7 @@ brew services restart easybar
 ## Upgrade
 
 ```bash
-brew upgrade easybar
+brew upgrade gi8lino/tap/easybar
 brew services restart easybar
 ```
 
@@ -53,7 +53,7 @@ brew services restart easybar
 
 ```bash
 brew services stop easybar
-brew uninstall easybar
+brew uninstall gi8lino/tap/easybar
 ```
 
 ## Source
