@@ -5,7 +5,7 @@ class Easybar < Formula
   sha256 "955b83e552eab6b7116815068a3877a43331c669378f52daadf5335476c22e97"
   version "0.0.10"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   def install
     libexec.install "EasyBar.app"
