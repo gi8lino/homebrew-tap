@@ -1,9 +1,9 @@
 class Easybar < Formula
   desc "Scriptable macOS status bar with SwiftUI and Lua widgets"
   homepage "https://github.com/gi8lino/easybar"
-  url "https://github.com/gi8lino/easybar/releases/download/v0.0.14/EasyBar-0.0.14.zip"
-  sha256 "eb68cc10f0c62324b943eb3bd18da1ed04edd33dfbde1a625e8088ad40413260"
-  version "0.0.14"
+  url "https://github.com/gi8lino/easybar/releases/download/v#{version}/EasyBar-#{version}.zip"
+  sha256 "YOUR_SHA256"
+  version "YOUR_VERSION"
 
   depends_on macos: :sonoma
 
@@ -15,6 +15,8 @@ class Easybar < Formula
       #!/bin/bash
       exec "#{libexec}/EasyBar.app/Contents/MacOS/EasyBar" "$@"
     SH
+
+    (var/"log/easybar").mkpath
   end
 
   service do
@@ -27,8 +29,8 @@ class Easybar < Formula
     keep_alive true
     process_type :interactive
     working_dir HOMEBREW_PREFIX
-    log_path var/"log/easybar.log"
-    error_log_path var/"log/easybar.log"
+    log_path var/"log/easybar/easybar.out.log"
+    error_log_path var/"log/easybar/easybar.err.log"
   end
 
   test do
