@@ -2,8 +2,8 @@ class Easybar < Formula
   desc "Scriptable macOS status bar with SwiftUI and Lua widgets"
   homepage "https://github.com/gi8lino/easybar"
   url "https://github.com/gi8lino/easybar/releases/download/v#{version}/EasyBar-#{version}.zip"
-  sha256 "YOUR_SHA256"
-  version "YOUR_VERSION"
+  sha256 "c4c4a0105255c064cf54d609dc31e25b1f8c1cc7df16ba572704851782cb65bd"
+  version "0.0.16"
 
   depends_on macos: :sonoma
 
@@ -13,7 +13,7 @@ class Easybar < Formula
 
     (bin/"easybar").write <<~SH
       #!/bin/bash
-      exec "#{libexec}/EasyBar.app/Contents/MacOS/EasyBar" "$@"
+      exec "#{libexec}/EasyBar.app/Contents/MacOS/EasyBar" ""
     SH
 
     (var/"log/easybar").mkpath
