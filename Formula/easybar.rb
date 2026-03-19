@@ -23,7 +23,6 @@ class Easybar < Formula
       PATH: std_service_path_env,
       LANG: "en_US.UTF-8",
       EASYBAR_DEBUG: "0",
-      EASYBAR_CONFIG_PATH: "",
     )
     keep_alive true
     process_type :interactive
