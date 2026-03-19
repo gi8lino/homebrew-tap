@@ -1,9 +1,10 @@
 class Wifisnitch < Formula
   desc "Background macOS Wi-Fi and network status agent with CLI access"
   homepage "https://github.com/gi8lino/wifi-snitch"
-  url "https://github.com/gi8lino/wifi-snitch/releases/download/v0.0.6/WiFiSnitch-0.0.6.zip"
-  sha256 "971ecf8de7666b9df7c7cdd9605b5adcace6bda1b78ebf995fe0f5bb7471dbc9"
-  version "0.0.6"
+  url "https://github.com/gi8lino/wifi-snitch/releases/download/v${VERSION}/WiFiSnitch-${VERSION}/.zip"
+  sha256 "${SHA}"
+  license "Apache-2.0"
+  version "${VERSION}"
 
   depends_on macos: :sonoma
 
@@ -13,7 +14,7 @@ class Wifisnitch < Formula
 
     (bin/"wifisnitch").write <<~SH
       #!/bin/bash
-      exec "#{libexec}/WiFiSnitch.app/Contents/MacOS/WiFiSnitch" "$@"
+      exec "#{libexec}/WiFiSnitch.app/Contents/MacOS/WiFiSnitch" "\$@"
     SH
 
     (var/"log/wifisnitch").mkpath
