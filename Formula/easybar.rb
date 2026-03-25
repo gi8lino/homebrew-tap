@@ -1,10 +1,10 @@
 class Easybar < Formula
   desc "Scriptable macOS status bar with SwiftUI and Lua widgets"
   homepage "https://github.com/gi8lino/easybar"
-  url "https://github.com/gi8lino/easybar/releases/download/v0.0.36/EasyBar-0.0.36.zip"
-  sha256 "8f75e050fd53905d7251d1ce657c18482910260b851e6c4ce69502f934dc32af"
+  url "https://github.com/gi8lino/easybar/releases/download/v0.0.37/EasyBar-0.0.37.zip"
+  sha256 "be8d4db634e7767248df40184302f1f16ec5c00352bc59439af861623b0291d8"
   license "Apache-2.0"
-  version "0.0.36"
+  version "0.0.37"
 
   depends_on macos: :sonoma
   depends_on "easybar-calendar-agent"
