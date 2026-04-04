@@ -1,26 +1,21 @@
 class EasybarCalendarAgent < Formula
   desc "Calendar EventKit helper service for EasyBar"
   homepage "https://github.com/gi8lino/easybar"
-  url "https://github.com/gi8lino/easybar/releases/download/v0.0.78/EasyBar-0.0.78.zip"
-  sha256 "5a1ab4d656d6a66a5c6a560ba925991b510bbc66fdfca5cad91950d1f04f4a2d"
+  url "https://github.com/gi8lino/easybar/releases/download/v0.0.79/EasyBar-0.0.79.zip"
+  sha256 "f17c1b1b26dbb8b71ce022005ec55bc10754591bb77bfcbcceec9401b40a1f6e"
   license "Apache-2.0"
-  version "0.0.78"
+  version "0.0.79"
 
   depends_on macos: :sonoma
 
   def install
     libexec.install "EasyBarCalendarAgent.app"
 
-    (bin/"easybar-calendar-agent").write <<~SH
-      #!/bin/bash
-      exec "#{libexec}/EasyBarCalendarAgent.app/Contents/MacOS/EasyBarCalendarAgent" "$@"
-    SH
-
     (var/"log/easybar-calendar-agent").mkpath
   end
 
   service do
-    run [opt_bin/"easybar-calendar-agent"]
+    run [opt_libexec/"EasyBarCalendarAgent.app/Contents/MacOS/EasyBarCalendarAgent"]
     environment_variables PATH: std_service_path_env, LANG: "en_US.UTF-8"
     keep_alive true
     process_type :interactive
