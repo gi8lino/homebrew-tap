@@ -1,27 +1,22 @@
 class Wifisnitch < Formula
   desc "Background macOS Wi-Fi and network status agent with CLI access"
   homepage "https://github.com/gi8lino/wifi-snitch"
-  url "https://github.com/gi8lino/wifi-snitch/releases/download/v0.0.17/WiFiSnitch-0.0.17.zip"
-  sha256 "1044fe4e7425065d91d50479ab56f5e720ac6fed49d0136008a64ee32e067339"
+  url "https://github.com/gi8lino/wifi-snitch/releases/download/v0.0.22/WiFiSnitch-0.0.22.zip"
+  sha256 "41a842e04041e4b63ff1428317df739ef026d21e7cb9b861adfff875c5b28539"
   license "Apache-2.0"
-  version "0.0.17"
+  version "0.0.22"
 
   depends_on macos: :sonoma
 
   def install
     libexec.install "WiFiSnitch.app"
-    bin.install "wifisnitchctl"
-
-    (bin/"wifisnitch").write <<~SH
-      #!/bin/bash
-      exec "#{libexec}/WiFiSnitch.app/Contents/MacOS/WiFiSnitch" "$@"
-    SH
+    bin.install "wifisnitch"
 
     (var/"log/wifisnitch").mkpath
   end
 
   service do
-    run [opt_bin/"wifisnitch"]
+    run [opt_libexec/"WiFiSnitch.app/Contents/MacOS/WiFiSnitch"]
     environment_variables PATH: std_service_path_env, LANG: "en_US.UTF-8"
     keep_alive true
     process_type :interactive
@@ -31,6 +26,6 @@ class Wifisnitch < Formula
   end
 
   test do
-    assert_match "wifisnitchctl", shell_output("#{bin}/wifisnitchctl --help 2>&1")
+    assert_match "wifisnitch", shell_output("#{bin}/wifisnitch --help 2>&1")
   end
 end
