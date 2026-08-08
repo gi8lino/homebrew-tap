@@ -1,4 +1,4 @@
-# easybar-app/homebrew-tap
+# gi8lino/homebrew-tap
 
 Homebrew tap for `soon` and `wifisnitch`.
 
