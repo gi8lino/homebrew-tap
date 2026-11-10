@@ -1,10 +1,10 @@
 class Soon < Formula
   desc "Minimal macOS app launcher for scheduled reminders"
   homepage "https://github.com/gi8lino/soon"
-  url "https://github.com/gi8lino/soon/releases/download/v0.2.8/Soon-0.2.8.zip"
-  sha256 "e840d26b0b2ead3afe15cc5e1c1ca05b139ccfd2299022f61959876ccd6604cb"
+  url "https://github.com/gi8lino/soon/releases/download/v0.2.9/Soon-0.2.9.zip"
+  sha256 "16055d9128b60238f6ab020c566eb8319cd88c9ea8b112b648af234bc4542e07"
   license "Apache-2.0"
-  version "0.2.8"
+  version "0.2.9"
 
   depends_on macos: :sonoma
 
