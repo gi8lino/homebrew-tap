@@ -1,10 +1,10 @@
 class Wifisnitch < Formula
   desc "Background macOS Wi-Fi and network status agent with CLI access"
   homepage "https://github.com/gi8lino/wifi-snitch"
-  url "https://github.com/gi8lino/wifi-snitch/releases/download/v0.2.6/WiFiSnitch-0.2.6.zip"
-  sha256 "12b17f153b60685adba5956aff6d6a229403bb5564cb81d983412d0f50a987a6"
+  url "https://github.com/gi8lino/wifi-snitch/releases/download/v0.2.7/WiFiSnitch-0.2.7.zip"
+  sha256 "af020945ad547b4af5154afc73c09cc3ebafedab500aadf3732e434f2105b6db"
   license "Apache-2.0"
-  version "0.2.6"
+  version "0.2.7"
 
   depends_on macos: :sonoma
 
